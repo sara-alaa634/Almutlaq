@@ -1,0 +1,114 @@
+/* Client Page Css Start */
+.client-table-user-img{
+    width:32px !important;
+    height: 32px;
+    border: 1px solid var(--table-border-color);
+    border-radius: 50%;
+}
+.client-table-user-img-rounded{
+    width:38px ;
+    height: 38px;
+    border: 1px solid var(--table-border-color);
+    border-radius: 6px;
+}
+
+.ongoing-case{
+    background-color:var(--statistic-bg3) ;
+    color:var(--statistic-c3) ;
+    border-radius: 4px;
+}
+.ended-case {
+    background-color: var(--ended-case-bg-2);
+    color: var(--mc-2) ;
+    border-radius: 4px;
+}
+.active-case{
+    background-color:var(--statistic-bg1) ;
+    color:var(--statistic-c1) ;
+    border-radius: 4px;
+}
+.inactive-case {
+    background-color: var(--statistic-bg2);
+    color: var(--statistic-c2) ;
+    border-radius: 4px;
+}
+.mw-200px{
+    min-width: 200px !important;
+}
+
+
+/* Client Page Css End */
+
+/* Create User Page Css Start */
+.create-user-img{
+    width: 100px;
+    height: 100px;
+    object-fit: fill;
+    border: 1px solid var(--table-border-color);
+}
+
+.upload-img-note{
+    font-size:15px ;
+    font-weight:500 ;
+    line-height:22px;
+    color: var(--text-color);
+
+}
+/* Create User Page Css End */
+/* View User Info Page Css Start */
+.nav-link.user-view-tab.active,
+.nav-link.user-view-tab:hover {
+    background-color: var(--sc-1);
+    color: var(--l-d-clr);
+    border-radius: 6px !important;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
+    color: var(--text-strong-color);
+    border-bottom: 1px solid var(--text-strong-color);
+    border-radius: 0px !important;
+    transition:all .3s ease-in-out ;
+}
+
+/* View User Info Page Css End */
+
+/* responsive start*/
+@media (max-width:900px) {
+    .fs-12-tablet{
+        font-size: 12px !important;
+    }
+    .btn-h48-s15 {
+        font-size: 12px !important;
+        height: 40px;
+    }
+}
+@media (max-width:650px) {
+    .fs-12-tablet{
+        font-size: 11px !important;
+        font-weight: 800 !important;
+
+    }
+    .btn-h48-s15 {
+        font-size: 10px !important;
+        height: 40px;
+        font-weight: 800 !important;
+
+    }
+}
+@media(max-width:400px){
+    .upload-img-note{
+        font-size: 13px;
+    }
+}
+@media (max-width:350px) {
+    .fs-12-tablet{
+        font-size: 11px !important;
+    }
+    .btn-h48-s15 {
+        font-size: 9px !important;
+        height: 40px;
+        font-weight: 800 !important;
+    }
+}
+
+
+/* responsive end*/

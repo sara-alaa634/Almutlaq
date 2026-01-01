@@ -1,0 +1,17 @@
+body {
+  padding: 0;
+  margin: 0;
+  text-decoration-line: none;
+  box-sizing: border-box;
+  transition: .3s all;
+  font-family:"public-sans", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
