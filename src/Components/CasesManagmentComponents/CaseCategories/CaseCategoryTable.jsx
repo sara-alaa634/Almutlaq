@@ -95,9 +95,9 @@ const CaseCategoryTable = ({
       prev.map((item) =>
         item.id === caseCategory.id
           ? {
-              ...item,
-              status: caseCategory.status === 1 ? 0 : 1,
-            }
+            ...item,
+            status: caseCategory.status === 1 ? 0 : 1,
+          }
           : item
       )
     );
@@ -114,40 +114,20 @@ const CaseCategoryTable = ({
         <table className="table table-border">
           <thead>
             <tr>
-              <th scope="col">
-                <span className={`${isRTL?"me-2":"ms-2"} d-inline-block create-btn-clr`}>
-                  {t("publisher_info")}
-                </span>
-              </th>
-              <th scope="col">{t("publish_data")}</th>
               <th scope="col">{t("case_type")}</th>
               <th scope="col">{t("state")}</th>
-              <th scope="col" className={isRTL?"text-start":"text-end"}>
-                <span className={` ${isRTL?"ms-4":"me-4"} d-inline-block fs-5`}>
+              <th scope="col" className={isRTL ? "text-start" : "text-end"}>
+                <span className={` ${isRTL ? "ms-4" : "me-4"} d-inline-block fs-5`}>
                   <FiSettings />
                 </span>
               </th>
+              <th scope="col">{t("publish_data")}</th>
             </tr>
           </thead>
           <tbody>
             {currentData && currentData.length > 0 ? (
               currentData.map((caseCategory) => (
                 <tr key={caseCategory.id}>
-                  <td className="mw-170px">
-                    <img
-                      className="client-table-user-img mx-2"
-                      src={
-                        caseCategory.user.image
-                          ? caseCategory.user.image
-                          : `${process.env.PUBLIC_URL}/Assets/Images/human-placeholder.jpg`
-                      }
-                      alt="..."
-                    />
-                    <span>{caseCategory.user.name}</span>
-                  </td>
-                  <td className="mw-120px">
-                    {handleTableColumnDateFormat(caseCategory.created_at)}
-                  </td>
                   <td className="mw-170px">
                     <div className="d-flex gap-2 align-items-center">
                       <img
@@ -173,9 +153,8 @@ const CaseCategoryTable = ({
                   </td>
                   <td className="text-end">
                     <span
-                      className={` ${
-                        isRTL ? "ms-2" : "me-2"
-                      } d-flex flex-column align-items-end justify-content-end`}
+                      className={` ${isRTL ? "ms-2" : "me-2"
+                        } d-flex flex-column align-items-end justify-content-end`}
                     >
                       <span className="d-flex justify-content-between align-items-center">
                         {deletePermission && (
@@ -187,9 +166,8 @@ const CaseCategoryTable = ({
                             }}
                           >
                             <TbTrash
-                              className={`fs-4 mb-2 text-color ${
-                                isRTL ? "ms-3" : "me-3"
-                              }`}
+                              className={`fs-4 mb-2 text-color ${isRTL ? "ms-3" : "me-3"
+                                }`}
                             />
                           </a>
                         )}
@@ -199,13 +177,12 @@ const CaseCategoryTable = ({
                             onClick={(e) => handleEdit(e, caseCategory.id)}
                           >
                             <FiEdit
-                              className={`fs-4 mb-2 text-color ${
-                                !deletePermission
-                                  ? isRTL
-                                    ? "ms-3"
-                                    : "me-3"
-                                  : ""
-                              }`}
+                              className={`fs-4 mb-2 text-color ${!deletePermission
+                                ? isRTL
+                                  ? "ms-3"
+                                  : "me-3"
+                                : ""
+                                }`}
                             />
                           </a>
                         )}
@@ -218,15 +195,13 @@ const CaseCategoryTable = ({
                           >
                             {caseCategory.status ? (
                               <LuToggleLeft
-                                className={`fs-4 mb-2 text-color ${
-                                  isRTL ? "ms-3" : "me-3"
-                                }`}
+                                className={`fs-4 mb-2 text-color ${isRTL ? "ms-3" : "me-3"
+                                  }`}
                               />
                             ) : (
                               <LuToggleRight
-                                className={`fs-4 mb-2 text-color ${
-                                  isRTL ? "ms-3" : "me-3"
-                                }`}
+                                className={`fs-4 mb-2 text-color ${isRTL ? "ms-3" : "me-3"
+                                  }`}
                               />
                             )}
                           </a>
@@ -237,20 +212,22 @@ const CaseCategoryTable = ({
                             onClick={(e) => handleView(e, caseCategory.id)}
                           >
                             <TbEyeCheck
-                              className={`fs-4 mb-2 text-color ${
-                                !editPermission ? (isRTL ? "ms-4" : "me-3") : ""
-                              }`}
+                              className={`fs-4 mb-2 text-color ${!editPermission ? (isRTL ? "ms-4" : "me-3") : ""
+                                }`}
                             />
                           </a>
                         )}
                       </span>
                     </span>
                   </td>
+                  <td className="mw-120px">
+                    {handleTableColumnDateFormat(caseCategory.created_at)}
+                  </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="5" className="text-center">
+                <td colSpan="4" className="text-center">
                   {t("no_data_available")}
                 </td>
               </tr>

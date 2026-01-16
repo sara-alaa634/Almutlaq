@@ -97,9 +97,9 @@ const CaseSubCategoryTable = ({
       prev.map((item) =>
         item.id === caseSubCategory.id
           ? {
-              ...item,
-              status: caseSubCategory.status === 1 ? 0 : 1,
-            }
+            ...item,
+            status: caseSubCategory.status === 1 ? 0 : 1,
+          }
           : item
       )
     );
@@ -117,12 +117,6 @@ const CaseSubCategoryTable = ({
         <table className="table table-border">
           <thead>
             <tr>
-              <th scope="col ">
-              <span className={`${isRTL?"me-2":"ms-2"} d-inline-block create-btn-clr`}>
-              {t("publisher_info")}
-                </span>
-              </th>
-              <th scope="col">{t("publish_data")}</th>
               <th scope="col">{t("case_category")}</th>
               <th scope="col">{t("case_type")}</th>
               <th scope="col">{t("state")}</th>
@@ -131,27 +125,13 @@ const CaseSubCategoryTable = ({
                   <TbSettings className="fs-4" />
                 </span>
               </th>
+              <th scope="col">{t("publish_data")}</th>
             </tr>
           </thead>
           <tbody>
             {currentData && currentData.length > 0 ? (
               currentData.map((caseSubCategory) => (
                 <tr key={caseSubCategory.id}>
-                  <td className=" mw-170px">
-                    <img
-                      className="client-table-user-img mx-2"
-                      src={
-                        caseSubCategory.category.user.image
-                          ? caseSubCategory.category.user.image
-                          : `${process.env.PUBLIC_URL}/Assets/Images/human-placeholder.jpg`
-                      }
-                      alt=""
-                    />{" "}
-                    <span>{caseSubCategory.category.user.name} </span>
-                  </td>
-                  <td className="mw-120px">
-                    {handleTableColumnDateFormat(caseSubCategory.created_at)}
-                  </td>
                   <td className=" mw-170px">
                     <div className="d-flex gap-2 align-items-center">
                       <img
@@ -191,9 +171,8 @@ const CaseSubCategoryTable = ({
                   </td>
                   <td className="text-end">
                     <span
-                      className={` ${
-                        isRTL ? "ms-2" : "me-2"
-                      } d-flex flex-column align-items-end justify-content-end`}
+                      className={` ${isRTL ? "ms-2" : "me-2"
+                        } d-flex flex-column align-items-end justify-content-end`}
                     >
                       <span className="d-flex justify-content-between align-items-center">
                         {deletePermission && (
@@ -205,9 +184,8 @@ const CaseSubCategoryTable = ({
                             }}
                           >
                             <TbTrash
-                              className={`fs-4 mb-2 text-color ${
-                                isRTL ? "ms-3" : "me-3"
-                              }`}
+                              className={`fs-4 mb-2 text-color ${isRTL ? "ms-3" : "me-3"
+                                }`}
                             />
                           </a>
                         )}
@@ -217,13 +195,12 @@ const CaseSubCategoryTable = ({
                             onClick={(e) => handleEdit(e, caseSubCategory.id)}
                           >
                             <TbEdit
-                              className={`fs-4 mb-2 text-color ${
-                                !deletePermission
-                                  ? isRTL
-                                    ? "ms-3"
-                                    : "me-3"
-                                  : ""
-                              }`}
+                              className={`fs-4 mb-2 text-color ${!deletePermission
+                                ? isRTL
+                                  ? "ms-3"
+                                  : "me-3"
+                                : ""
+                                }`}
                             />
                           </a>
                         )}
@@ -236,15 +213,13 @@ const CaseSubCategoryTable = ({
                           >
                             {caseSubCategory.status ? (
                               <LuToggleLeft
-                                className={`fs-4 mb-2 text-color ${
-                                  isRTL ? "ms-3" : "me-3"
-                                }`}
+                                className={`fs-4 mb-2 text-color ${isRTL ? "ms-3" : "me-3"
+                                  }`}
                               />
                             ) : (
                               <LuToggleRight
-                                className={`fs-4 mb-2 text-color ${
-                                  isRTL ? "ms-3" : "me-3"
-                                }`}
+                                className={`fs-4 mb-2 text-color ${isRTL ? "ms-3" : "me-3"
+                                  }`}
                               />
                             )}
                           </a>
@@ -255,14 +230,16 @@ const CaseSubCategoryTable = ({
                             onClick={(e) => handleView(e, caseSubCategory.id)}
                           >
                             <TbEyeCheck
-                              className={`fs-4 mb-2 text-color ${
-                                !editPermission ? (isRTL ? "ms-4" : "me-3") : ""
-                              }`}
+                              className={`fs-4 mb-2 text-color ${!editPermission ? (isRTL ? "ms-4" : "me-3") : ""
+                                }`}
                             />
                           </a>
                         )}
                       </span>
                     </span>
+                  </td>
+                  <td className="mw-120px">
+                    {handleTableColumnDateFormat(caseSubCategory.created_at)}
                   </td>
                 </tr>
               ))
