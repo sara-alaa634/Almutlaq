@@ -38,10 +38,10 @@ const CreatePostForm = ({ addPost, fetchTags }) => {
   const viewPost = {
     id: 1,
     creator: {
-      name: "مكتب أ عمر هريدي للاستشارات القانونية",
+      name: "مكتب المطلق للمحاماة للاستشارات القانونية",
       image: process.env.PUBLIC_URL + "/Assets/Images/create-post-img.png",
     },
-    postPublisherName: "مكتب أ عمر هريدي للاستشارات القانونية",
+    postPublisherName: "مكتب المطلق للمحاماة للاستشارات القانونية",
     created_at: getCurrentTimeInApiFormat(),
     text: postDescription,
     media_type: "image",
@@ -140,7 +140,7 @@ const CreatePostForm = ({ addPost, fetchTags }) => {
                 />
                 <div>
                   <div className="publisher-name h5 mb-0 fw-semibold text-capitalize">
-                    مكتب أ عمر هريدي للاستشارات القانونية
+                    مكتب أ المطلق للمحاماة للاستشارات القانونية
                   </div>
                 </div>
               </div>
@@ -214,9 +214,8 @@ const CreatePostForm = ({ addPost, fetchTags }) => {
                       />
                       <label
                         htmlFor={`tag-${tag.id}`}
-                        className={`tag-label px-3 py-2 fw-semibold rounded-5 ${
-                          selectedTags.includes(tag.name) ? "selected" : ""
-                        }`}
+                        className={`tag-label px-3 py-2 fw-semibold rounded-5 ${selectedTags.includes(tag.name) ? "selected" : ""
+                          }`}
                       >
                         {tag.name}
                       </label>
@@ -228,7 +227,7 @@ const CreatePostForm = ({ addPost, fetchTags }) => {
 
                 <button
                   className="rounded-circle create-btn-clr input-border-bottom tag-label p-12px fw-bold  d-flex align-items-center"
-                  onClick={(e)=> {addTagToggle(e)}}
+                  onClick={(e) => { addTagToggle(e) }}
                 >
                   {addTagView ? <IoClose /> : <FaPlus />}
                 </button>
